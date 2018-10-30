@@ -1,0 +1,59 @@
+.center-content {
+    margin: 0 auto;
+    text-align: -webkit-center;
+    width: fit-content;
+
+}
+
+.obj-contanier {
+    margin: 0 auto;
+    text-align: -webkit-center;
+    width: fit-content;
+}
+
+.column-no-padding {
+    padding: 0%!important;
+}
+
+.row-padding {
+    padding: 14px!important;
+}
+
+
+.dividerContainer {
+    height: 60px;
+    display: flex;
+    align-items: stretch;
+    
+    
+}
+
+.dividerContainer > div{
+    align-items: stretch;
+    
+    
+}
+
+
+.divider {
+    height: 30px;
+    border-bottom: 1px dotted red;
+    flex-grow: 1
+}
+
+.divider-active {
+    height: 30px;
+    border-bottom: 1px dotted #333333;
+    flex-grow: 1
+}
+
+.divider-non-active {
+    height: 30px;
+    border-bottom: 1px dotted #8c8c8c;
+    flex-grow: 1
+}
+
+.divider-empty {
+    height: 30px;
+    flex-grow: 1   
+}
