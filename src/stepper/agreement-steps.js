@@ -2,7 +2,7 @@ export const agreementSteps = [
     {
         stage: 0,
         classCode: 'getingSerious',
-        title: 'Geting Serious',
+        title: 'Geting\nSerious',
         colorCode: '#33ccff',
         imageSrc: '',
         active: true,
@@ -11,7 +11,7 @@ export const agreementSteps = [
     {
         stage: 1,
         classCode: 'referenceAndLease',
-        title: 'Reference & Lease',
+        title: 'Reference\n& Lease',
         colorCode: '#cc66ff',
         imageSrc: '',
         selectedImageSrc: '',
@@ -21,7 +21,7 @@ export const agreementSteps = [
     {
         stage: 2,
         classCode: 'signaturesAndPayments',
-        title: 'Signatures & Payments',
+        title: 'Signatures\n& Payments',
         colorCode: '#ff9933',
         imageSrc: '',
         selectedImageSrc: '',
@@ -41,7 +41,7 @@ export const agreementSteps = [
     {
         stage: 4,
         classCode: 'activeLease',
-        title: 'Active Lease',
+        title: 'Active\nLease',
         colorCode: '#00ff99',
         imageSrc: '',
         selectedImageSrc: '',
