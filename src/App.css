@@ -1,27 +1,27 @@
-.center-content {
+.stepper-center-content {
     margin: 0 auto;
     text-align: -webkit-center;
     width: fit-content;
 
 }
 
-.obj-contanier {
+.stepper-obj-contanier {
     margin: 0 auto;
     text-align: -webkit-center;
     width: fit-content;
 }
 
-.column-no-padding {
+.stepper-column-no-padding {
     padding: 0%!important;
 }
 
-.row-padding {
+.stepper-row-padding {
     padding: 14px!important;
 	
 }
 
 
-.dividerContainer {
+.stepper-dividerContainer {
     height: 90px;
     display: flex;
     align-items: stretch;
@@ -29,33 +29,133 @@
     
 }
 
-.dividerContainer > div{
+.stepper-dividerContainer > div{
     align-items: stretch;
     
     
 }
 
 
-.divider {
-    height: 30px;
+.stepper-divider {
+    height: 45px;
     border-bottom: 1px dotted red;
     flex-grow: 1
 }
 
-.divider-active {
+.stepper-divider-active {
     height: 45px;
     border-bottom: 1px dotted #333333;
     flex-grow: 1
 }
 
-.divider-non-active {
+.stepper-divider-non-active {
     height: 45px;
     border-bottom: 1px dotted #8c8c8c;
     flex-grow: 1
 }
 
-.divider-empty {
+.stepper-divider-empty {
     height: 45px;
     flex-grow: 1   
 }
 
+.step-active {
+    height: 90px;
+    width: 90px;
+    border: 1px dotted #333333;
+    border-radius: 100%;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.step-non-active {
+    height: 90px;
+    width: 90px;
+    border: 1px dotted #8c8c8c;
+    border-radius: 100%;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    text-align: center;
+}
+
+.step-selected-shape-container {
+    height: 90px;
+    width: 'fit-content';
+    z-index: -1;
+}
+
+.step-image {
+    z-index: 0;
+    position: absolute;
+    float: left;
+    text-align: left;
+}
+
+.step-selected {
+    height: 90px;
+    flex: 1 1 auto;
+    max-width: 240px;
+    min-width: 60px;
+    border-radius: 60px;
+    border: 1px solid;
+
+}
+
+.step-selected-circle-right {
+    float: left;
+    height: 100%;
+    width: 45px;
+    border-bottom-left-radius: 60px;
+    border-top-left-radius: 60px;
+    border: 1px solid;
+}
+
+.step-selected-circle-left {
+    float: left;
+    height: 100%;
+    width: 45px;
+    border-bottom-right-radius: 60px;
+    border-top-right-radius: 60px;
+    border: 1px solid;
+}
+
+.step-selected-rectangle {
+    float: left;
+    height: 100%;
+    width: 120px;
+
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    border: 1px solid;
+}
+
+.step-selected-getingSerious-color {
+    background-color: #33ccff;
+    border-color: #33ccff;
+}
+
+.step-selected-referenceAndLease-color {
+    background-color: #cc66ff;
+    border-color: #cc66ff;
+}
+
+.step-selected-signaturesAndPayments-color {
+    background-color: #ff9933;
+    border-color: #ff9933;
+}
+
+.step-selected-movingIn-color {
+    background-color: #0066ff;
+    border-color: #0066ff;
+}
+
+.step-selected-activeLease-color {
+    background-color: #00ff99;
+    border-color: #00ff99;
+}

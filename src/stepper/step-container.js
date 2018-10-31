@@ -32,9 +32,9 @@ export class StepContainer extends Component {
   stepIsDone(stepId) {}
 
   drawDivider({step, position}) {
-    const emptyDivider = <div className="divider-empty"></div>;
-    const activeDivider = <div className="divider-active"></div>;
-    const normalDivider =  <div className="divider-non-active"></div>;
+    const emptyDivider = <div className="stepper-divider-empty"></div>;
+    const activeDivider = <div className="stepper-divider-active"></div>;
+    const normalDivider =  <div className="stepper-divider-non-active"></div>;
     const {agreementSteps} = this.state;
     const {isFirst, isLast, stepAfter, stepBefore} = stepUtils(agreementSteps);
 
@@ -59,8 +59,8 @@ export class StepContainer extends Component {
     const {agreementSteps} = this.state;
 
     const steps = agreementSteps.map((step, index) =>
-      <Grid.Column textAlign='center' className="column-no-padding" key={index}>
-        <div className="dividerContainer">
+      <Grid.Column textAlign='center' className="stepper-column-no-padding" key={index}>
+        <div className="stepper-dividerContainer">
           {this.drawDivider({step, position: PositionEnum.BEFORE})}
           <Step settings={step} onClick={this.handleStepClick.bind(this, index)} />
           {this.drawDivider({step, position: PositionEnum.AFTER})}

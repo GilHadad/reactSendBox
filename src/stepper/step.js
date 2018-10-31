@@ -16,24 +16,33 @@ export class Step extends Component {
   showStep() {
     const {settings, onClick} = this.props;
     if (settings.selected) {
-      const selectedStepStyle = getSelectedStepStyles(settings.colorCode)
+      // const circleRightClass = `step-selected-circle-right step-selected-${settings.classCode}-color`;
+      // const circleLeftClass = `step-selected-circle-left step-selected-${settings.classCode}-color`;
+      // const rectangleClass = `step-selected-rectangle step-selected-${settings.classCode}-color`;
+      const setpSelectedClass = `step-selected step-selected-${settings.classCode}-color`;
       return (
         <div>
-          <div style={styles.shape}>
-            <div style={selectedStepStyle.circleRight}></div>
-            <div style={selectedStepStyle.rectangle}>
+          <div className={setpSelectedClass}>{settings.title}</div>
+          {/* <div className="step-selected-shape-container">
+            <div className={circleRightClass}></div>
+            <div className={rectangleClass}>
               <div>{settings.title}</div>
             </div>
-            <div style={selectedStepStyle.circleLeft}></div>
-          </div>
+            <div className={circleLeftClass}></div>
+          </div> */}
         </div>
       )
     }
 
     else {
-      const stepStyle = getStepStyles(settings.active);
       const clickHandler = settings.active ? onClick : () => null
-      return (<div style={stepStyle.step} onClick={clickHandler}>{settings.title}</div>)
+      if (settings.active) {
+        return (<div className="step-active" onClick={clickHandler}>{settings.title}</div>)
+      }
+      return (<div className="step-non-active" onClick={clickHandler}>{settings.title}</div>)
+      // const stepStyle = getStepStyles(settings.active);
+      // const clickHandler = settings.active ? onClick : () => null
+      // return (<div style={stepStyle.step} onClick={clickHandler}>{settings.title}</div>)
     }
   }
 
