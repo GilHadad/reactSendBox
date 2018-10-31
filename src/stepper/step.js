@@ -1,79 +1,53 @@
-import React, { Component } from 'react';
-import styles, { getStepStyles, getSelectedStepStyles, getDividerStyle } from './step.css'
-
-
-
-
+import React, {Component} from 'react';
+import styles, {getStepStyles, getSelectedStepStyles, getDividerStyle} from './step.css'
+import PropTypes from 'prop-types';
 
 export class Step extends Component {
-    constructor(props) {
-        super(props);
-        this.state = {
-            stepAfter: this.props.allSteps[this.props.info.stage + 1],
-            stepBefore: this.props.allSteps[this.props.info.stage - 1]
-        };
-        console.log(props)
-        console.log(props.info.stage)
-        console.log(this.state)
+  constructor(props) {
+    super(props);
 
-        this.showStep = this.showStep.bind(this);
-        this.showDivider = this.showDivider.bind(this);
+    console.log(props)
+    console.log(props.settings.stage)
+    console.log(this.state)
 
-    }
+    this.showStep = this.showStep.bind(this);
+  }
 
-    showDivider(atts) {
-        if (atts.location === 'before' && this.state.stepBefore) {
-            return ( this.props.info.active ? <div className="divider-active"></div> : <div className="divider-non-active"></div>)
-        }
-        if (atts.location === 'after' && this.state.stepAfter) {
-            return (this.props.info.active ? <div className="divider-active"></div> : <div className="divider-non-active"></div>)
-        }
-
-        return(<div className="divider-empty"></div>)
-
-    }
-
-
-
-    showStep() {
-        let selectedStepStyle;
-        if (this.props.info.selected) {
-            selectedStepStyle = getSelectedStepStyles(this.props.info.colorCode)
-            return (
-                <div>
-                    <div style={styles.shape}>
-                        <div style={selectedStepStyle.circleRight}></div>
-                        <div style={selectedStepStyle.rectangle}>
-                            <div>{this.props.info.title}</div>
-                        </div>
-                        <div style={selectedStepStyle.circleLeft}></div>
-
-
-
-                    </div>
-                </div>
-
-            )
-        }
-
-        else {
-            selectedStepStyle = getStepStyles(this.props.info.active)
-            return (<div style={selectedStepStyle.step}>gil</div>)
-        }
-    }
-
-    render() {
-        return (
-            <div className="dividerContainer">
-                <this.showDivider location={'before'} />
-                <this.showStep />
-                <this.showDivider location={'after'} />
-
-
-
-
-
+  showStep() {
+    const {settings, onClick} = this.props;
+    if (settings.selected) {
+      const selectedStepStyle = getSelectedStepStyles(settings.colorCode)
+      return (
+        <div>
+          <div style={styles.shape}>
+            <div style={selectedStepStyle.circleRight}></div>
+            <div style={selectedStepStyle.rectangle}>
+              <div>{settings.title}</div>
             </div>
-        );
+            <div style={selectedStepStyle.circleLeft}></div>
+          </div>
+        </div>
+      )
     }
+
+    else {
+      const stepStyle = getStepStyles(settings.active);
+      const clickHandler = settings.active ? onClick : () => null
+      return (<div style={stepStyle.step} onClick={clickHandler}>{settings.title}</div>)
+    }
+  }
+
+  render() {
+    return this.showStep();
+  }
+}
+
+Step.propTypes = {
+  settings: PropTypes.object,
+  onClick: PropTypes.func
+}
+
+Step.defaultProps = {
+  settings: {},
+  onClick: () => null
 }

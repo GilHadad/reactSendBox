@@ -22,7 +22,7 @@
 
 
 .dividerContainer {
-    height: 60px;
+    height: 90px;
     display: flex;
     align-items: stretch;
     
@@ -43,19 +43,19 @@
 }
 
 .divider-active {
-    height: 30px;
+    height: 45px;
     border-bottom: 1px dotted #333333;
     flex-grow: 1
 }
 
 .divider-non-active {
-    height: 30px;
+    height: 45px;
     border-bottom: 1px dotted #8c8c8c;
     flex-grow: 1
 }
 
 .divider-empty {
-    height: 30px;
+    height: 45px;
     flex-grow: 1   
 }
 

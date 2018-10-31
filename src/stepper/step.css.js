@@ -1,9 +1,9 @@
-const height = 60;
+const height = 90;
 const colorActive = '#333333';
 const colorNotActive = '#8c8c8c';
 
 export function getDividerStyle(active) {
-    
+
 }
 
 export function getStepStyles(active) {
@@ -27,14 +27,11 @@ export function getStepStyles(active) {
             justifyContent: 'center',
             flexDirection: 'column',
             textAlign: 'center',
+            cursor: active? 'pointer': ' initial'
         },
         connector: {
-
             borderTop: border,
-        }
-
-
-
+        },
     }
     return stepClass
 }

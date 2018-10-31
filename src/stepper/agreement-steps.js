@@ -5,7 +5,7 @@ export const agreementSteps = [
         colorCode: '#33ccff',
         imageSrc: '',
         active: true,
-        selected: false
+        selected: true
     },
     {
         stage: 1,
@@ -22,8 +22,8 @@ export const agreementSteps = [
         colorCode: '#ff9933',
         imageSrc: '',
         selectedImageSrc: '',
-        active: true,
-        selected: true
+        active: false,
+        selected: false
     },
     {
         stage: 3,
