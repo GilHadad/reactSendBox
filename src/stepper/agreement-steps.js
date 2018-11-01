@@ -6,7 +6,9 @@ export const agreementSteps = [
         colorCode: '#33ccff',
         imageSrc: '',
         active: true,
-        selected: false
+        selected: false,
+        iconSrc: '',
+        iconActiveSrc: '../assets/textImage.png'
     },
     {
         stage: 1,
@@ -16,7 +18,9 @@ export const agreementSteps = [
         imageSrc: '',
         selectedImageSrc: '',
         active: true,
-        selected: false
+        selected: false,
+        iconSrc: '',
+        iconActiveSrc: '../assets/textImage.png'
     },
     {
         stage: 2,
@@ -26,7 +30,9 @@ export const agreementSteps = [
         imageSrc: '',
         selectedImageSrc: '',
         active: true,
-        selected: true
+        selected: true,
+        iconSrc: '',
+        iconActiveSrc: '../assets/textImage.png'
     },
     {
         stage: 3,
@@ -36,7 +42,9 @@ export const agreementSteps = [
         imageSrc: '',
         selectedImageSrc: '',
         active: false,
-        selected: false
+        selected: false,
+        iconSrc: '',
+        iconActiveSrc: '../assets/textImage.png'
     },
     {
         stage: 4,
@@ -46,6 +54,8 @@ export const agreementSteps = [
         imageSrc: '',
         selectedImageSrc: '',
         active: false,
-        selected: false
+        selected: false,
+        iconSrc: '',
+        iconActiveSrc: '../assets/textImage.png'
     }
 ]

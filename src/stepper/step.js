@@ -15,7 +15,7 @@ export class Step extends Component {
       return (
 
           <div className={setpSelectedClass}>
-          <img src={require("../assets/textImage.png")} alt="yay"className="step-image" />
+          <img src={require('../assets/textImage.png')} alt="yay"className="step-image" />
           {settings.title}
           </div>
 
