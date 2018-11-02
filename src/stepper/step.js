@@ -6,6 +6,7 @@ export class Step extends Component {
   constructor(props) {
     super(props);
     this.showStep = this.showStep.bind(this);
+    console.log(props)
   }
 
   showStep() {
@@ -15,7 +16,7 @@ export class Step extends Component {
       return (
 
           <div className={setpSelectedClass}>
-          <img src={require('../assets/textImage.png')} alt="yay"className="step-image" />
+          <img src={this.props.imageSrc} alt="yay" className="step-image" />
           {settings.title}
           </div>
 

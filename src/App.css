@@ -1,3 +1,8 @@
+.stepper-row {
+    padding-right: 40px !important;
+    padding-left: 40px !important;
+}
+
 .stepper-divider-container {
     height: 90px;
     display: flex;
@@ -10,13 +15,6 @@
 
 .stepper-divider-container > div{
     align-items: stretch;
-}
-
-
-.stepper-divider {
-    height: 45px;
-    border-bottom: 1px dotted red;
-    flex-grow: 1
 }
 
 .stepper-divider-active {
@@ -33,7 +31,7 @@
 
 .stepper-divider-empty {
     height: 45px;
-    flex-grow: 1   
+    width: 0px;
 }
 
 .step-active {
@@ -60,7 +58,11 @@
     text-align: center;
 }
 
-
+.step-image {
+    position: absolute;
+    width: 120px;
+    margin-left: -40px;
+}
 
 .step-image {
     position: absolute;
@@ -82,34 +84,7 @@
     border: 1px solid;
 }
 
-.step-selected-circle-right {
-    float: left;
-    height: 100%;
-    width: 45px;
-    border-bottom-left-radius: 60px;
-    border-top-left-radius: 60px;
-    border: 1px solid;
-}
 
-.step-selected-circle-left {
-    float: left;
-    height: 100%;
-    width: 45px;
-    border-bottom-right-radius: 60px;
-    border-top-right-radius: 60px;
-    border: 1px solid;
-}
-
-.step-selected-rectangle {
-    float: left;
-    height: 100%;
-    width: 120px;
-
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    border: 1px solid;
-}
 
 .step-selected-getingSerious-color {
     background-color: #33ccff;
@@ -134,4 +109,17 @@
 .step-selected-activeLease-color {
     background-color: #00ff99;
     border-color: #00ff99;
+}
+
+
+@media only screen and (max-width: 850px) {
+    .step-image {
+        width: 0px;
+    }
+
+    .step-selected {
+        height: 90px;
+        width: 90px;
+        border-radius: 100%;
+    }
 }

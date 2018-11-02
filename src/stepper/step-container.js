@@ -3,6 +3,7 @@ import { agreementSteps } from './agreement-steps';
 import { Step } from './step';
 import { Grid } from 'semantic-ui-react'
 import { stepUtils, PositionEnum } from './utils';
+import stepsImages from './imagesMapper'
 
 export class StepContainer extends Component {
 
@@ -13,6 +14,7 @@ export class StepContainer extends Component {
         };
 
         this.stepIsDone = this.stepIsDone.bind(this)
+        console.log(stepsImages)
 
     }
 
@@ -58,7 +60,7 @@ export class StepContainer extends Component {
        
                 <div className="stepper-divider-container" key={index}>
                     {this.drawDivider({ step, position: PositionEnum.BEFORE })}
-                    <Step settings={step} onClick={this.handleStepClick.bind(this, index)} />
+                    <Step settings={step} imageSrc={stepsImages[index]} onClick={this.handleStepClick.bind(this, index)} />
                     {this.drawDivider({ step, position: PositionEnum.AFTER })}
                 </div>
          
@@ -70,7 +72,7 @@ export class StepContainer extends Component {
                 <Grid.Row columns={1}>
                 </Grid.Row>
                 <Grid.Row columns={1}>
-                    <Grid.Column textAlign='center'>{steps}</Grid.Column>
+                    <Grid.Column textAlign='center' className="stepper-row">{steps}</Grid.Column>
                 </Grid.Row>
             </Grid>
 
