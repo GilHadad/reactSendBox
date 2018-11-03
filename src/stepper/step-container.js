@@ -4,13 +4,16 @@ import { Step } from './step';
 import { Grid } from 'semantic-ui-react'
 import { stepUtils, PositionEnum } from './utils';
 import stepsImages from './imagesMapper'
+import PropTypes from 'prop-types';
+
 
 export class StepContainer extends Component {
 
     constructor(props) {
         super(props);
         this.state = {
-            agreementSteps: agreementSteps
+            agreementSteps: this.props.steps,
+            agreementStepsFromParent: this.props.steps,
         };
 
         this.stepIsDone = this.stepIsDone.bind(this)
@@ -20,11 +23,13 @@ export class StepContainer extends Component {
 
     handleStepClick(clickedStepIndex) {
         const { agreementSteps } = this.state;
+        const {onStepChange} = this.props;
         const newAgreementSteps = agreementSteps.map((step, index) => {
             const activeStepsIndices = [clickedStepIndex - 1, clickedStepIndex, clickedStepIndex + 1];
             return { ...step, selected: index === clickedStepIndex, active: activeStepsIndices.some(i => i === index) };
         });
         this.setState({ agreementSteps: newAgreementSteps });
+        onStepChange(newAgreementSteps);
     }
 
     stepIsDone(stepId) { }
@@ -80,4 +85,23 @@ export class StepContainer extends Component {
         );
     }
 }
+StepContainer.getDerivedStateFromProps = (props, state) => {
+    if (props.steps === state.agreementStepsFromParent) {
+        return null;
+    } else {
+        return {
+            agreementStepsFromParent: props.steps,
+            agreementSteps: props.steps
+        };
+    }
+}
 
+StepContainer.propTypes = {
+    onStepChange: PropTypes.func,
+    steps: PropTypes.object
+};
+
+StepContainer.defaultProps = {
+    onStepChange: () => null,
+    steps: agreementSteps
+};
