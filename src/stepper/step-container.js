@@ -12,10 +12,7 @@ export class StepContainer extends Component {
         this.state = {
             agreementSteps: agreementSteps
         };
-
         this.stepIsDone = this.stepIsDone.bind(this)
-        console.log(stepsImages)
-
     }
 
     handleStepClick(clickedStepIndex) {
@@ -53,30 +50,44 @@ export class StepContainer extends Component {
         }
     }
 
+    setDivider({ step, position }) {
+        const emptyDivider = "stepper-divider-empty";
+        const activeDivider = "stepper-divider-active";
+        const nonActiveDivider = "stepper-divider-non-active";
+        const { agreementSteps } = this.state;
+        const { isFirst, stepBefore } = stepUtils(agreementSteps);
+
+        if (isFirst(step)) {
+            return emptyDivider;
+        }
+
+        if (position === PositionEnum.BEFORE) {
+            return step.active && stepBefore(step).active ? activeDivider : nonActiveDivider;
+        }
+
+    }
+
     render() {
         const { agreementSteps } = this.state;
 
-        const steps = agreementSteps.map((step, index) =>
-       
-                <div className="stepper-divider-container" key={index}>
-                    {this.drawDivider({ step, position: PositionEnum.BEFORE })}
-                    <Step settings={step} imageSrc={stepsImages[index]} onClick={this.handleStepClick.bind(this, index)} />
-                    {this.drawDivider({ step, position: PositionEnum.AFTER })}
-                </div>
-         
+        const setSteps = agreementSteps.map((step, index) =>
+            [
+                <div key={`divider${index}`} className={this.setDivider({ step, position: PositionEnum.BEFORE })}></div>,
+                <Step key={`step${index}`} settings={step} imageSrc={stepsImages[index]} onClick={this.handleStepClick.bind(this, index)} />
+            ]
         )
 
         return (
 
             <Grid>
                 <Grid.Row columns={1}>
-                </Grid.Row>
-                <Grid.Row columns={1}>
-                    <Grid.Column textAlign='center' className="stepper-row">{steps}</Grid.Column>
+                    <Grid.Column>
+                        <div className="stepper-divider-container stepper-row" key={1}>
+                            {setSteps}
+                        </div>
+                    </Grid.Column>
                 </Grid.Row>
             </Grid>
-
-
         );
     }
 }

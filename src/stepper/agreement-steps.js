@@ -6,8 +6,8 @@ export const agreementSteps = [
         colorCode: '#33ccff',
         imageSrc: '',
         active: true,
-        selected: false,
-        iconSrc: '',
+        selected: true,
+        iconCode: 'calendar alternate',
         iconActiveSrc: '../assets/textImage.png'
     },
     {
@@ -19,7 +19,7 @@ export const agreementSteps = [
         selectedImageSrc: '',
         active: true,
         selected: false,
-        iconSrc: '',
+        iconCode: 'file alternate',
         iconActiveSrc: '../assets/textImage.png'
     },
     {
@@ -29,9 +29,9 @@ export const agreementSteps = [
         colorCode: '#ff9933',
         imageSrc: '',
         selectedImageSrc: '',
-        active: true,
-        selected: true,
-        iconSrc: '',
+        active: false,
+        selected: false,
+        iconCode: 'pencil alternate',
         iconActiveSrc: '../assets/textImage.png'
     },
     {
@@ -43,7 +43,7 @@ export const agreementSteps = [
         selectedImageSrc: '',
         active: false,
         selected: false,
-        iconSrc: '',
+        iconCode: 'key',
         iconActiveSrc: '../assets/textImage.png'
     },
     {
@@ -55,7 +55,7 @@ export const agreementSteps = [
         selectedImageSrc: '',
         active: false,
         selected: false,
-        iconSrc: '',
+        iconCode: 'gift',
         iconActiveSrc: '../assets/textImage.png'
     }
 ]
