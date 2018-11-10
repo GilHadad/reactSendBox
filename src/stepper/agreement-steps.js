@@ -1,46 +1,61 @@
 export const agreementSteps = [
     {
         stage: 0,
-        title: 'Geting Serious',
+        classCode: 'getingSerious',
+        title: 'Geting\nSerious',
         colorCode: '#33ccff',
         imageSrc: '',
         active: true,
-        selected: false
+        selected: true,
+        iconCode: 'calendar alternate',
+        iconActiveSrc: '../assets/textImage.png'
     },
     {
         stage: 1,
-        title: 'Reference & Lease',
+        classCode: 'referenceAndLease',
+        title: 'Reference\n& Lease',
         colorCode: '#cc66ff',
         imageSrc: '',
         selectedImageSrc: '',
         active: true,
-        selected: false
+        selected: false,
+        iconCode: 'file alternate',
+        iconActiveSrc: '../assets/textImage.png'
     },
     {
         stage: 2,
-        title: 'Signatures & Payments',
+        classCode: 'signaturesAndPayments',
+        title: 'Signatures\n& Payments',
         colorCode: '#ff9933',
         imageSrc: '',
         selectedImageSrc: '',
         active: true,
-        selected: true
+        selected: false,
+        iconCode: 'pencil alternate',
+        iconActiveSrc: '../assets/textImage.png'
     },
     {
         stage: 3,
+        classCode: 'movingIn',
         title: 'Moving In',
         colorCode: '#0066ff',
         imageSrc: '',
         selectedImageSrc: '',
-        active: false,
-        selected: false
+        active: true,
+        selected: false,
+        iconCode: 'key',
+        iconActiveSrc: '../assets/textImage.png'
     },
     {
         stage: 4,
-        title: 'Active Lease',
+        classCode: 'activeLease',
+        title: 'Active\nLease',
         colorCode: '#00ff99',
         imageSrc: '',
         selectedImageSrc: '',
-        active: false,
-        selected: false
+        active: true,
+        selected: false,
+        iconCode: 'gift',
+        iconActiveSrc: '../assets/textImage.png'
     }
 ]
