@@ -1,7 +1,7 @@
+/* ============= STEPPER ============== */
+
 .stepper-row {
     padding: 40px;
-
-
 }
 
 .stepper-divider-container {
@@ -123,3 +123,37 @@
         font-size: 12px;
     }
 }
+
+
+/* ============= MODAL ============== */
+
+.loading-modal-row {
+    padding-left: 54px!important;;
+}
+
+.loading-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width:100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+  }
+  
+  .loading-modal-main {
+    position:fixed;
+    background: white;
+    width: 80%;
+    height: auto;
+    top:50%;
+    left:50%;
+    transform: translate(-50%,-50%);
+  }
+  
+  .loading-display-block {
+    display: block;
+  }
+  
+  .loading-display-none {
+    display: none;
+  }

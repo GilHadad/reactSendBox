@@ -8,7 +8,8 @@ import stepsImages from './imagesMapper'
 export class StepContainer extends Component {
 
     constructor(props) {
-        const aaa = 1; 
+        const aaa = 2; 
+        console.log('start at: ', aaa)
 
         super(props);
         this.state = {
@@ -69,6 +70,8 @@ export class StepContainer extends Component {
 
     render() {
         const { agreementSteps } = this.state;
+
+        console.log('render')
 
         const setSteps = agreementSteps.map((step, index) =>
             [
