@@ -10,13 +10,13 @@ export class Step extends Component {
   }
 
   showStep() {
-    const {settings, onClick} = this.props;
+    const {settings, onClick, imageSrc} = this.props;
     if (settings.selected) {
       const setpSelectedClass = `step-selected step-selected-${settings.classCode}-color`;
       return (
 
           <div className={setpSelectedClass}>
-          <img src={this.props.imageSrc} alt="yay" className="step-image" />
+          <img src={imageSrc} alt="yay" className="step-image" />
           {settings.title}
           </div>
 

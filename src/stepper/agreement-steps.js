@@ -29,7 +29,7 @@ export const agreementSteps = [
         colorCode: '#ff9933',
         imageSrc: '',
         selectedImageSrc: '',
-        active: false,
+        active: true,
         selected: false,
         iconCode: 'pencil alternate',
         iconActiveSrc: '../assets/textImage.png'
@@ -41,7 +41,7 @@ export const agreementSteps = [
         colorCode: '#0066ff',
         imageSrc: '',
         selectedImageSrc: '',
-        active: false,
+        active: true,
         selected: false,
         iconCode: 'key',
         iconActiveSrc: '../assets/textImage.png'
@@ -53,7 +53,7 @@ export const agreementSteps = [
         colorCode: '#00ff99',
         imageSrc: '',
         selectedImageSrc: '',
-        active: false,
+        active: true,
         selected: false,
         iconCode: 'gift',
         iconActiveSrc: '../assets/textImage.png'
